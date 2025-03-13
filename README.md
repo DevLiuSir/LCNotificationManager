@@ -35,6 +35,20 @@
 
 
 
+## Directory Structure
+
+```
+Sources/
+├── LCNotificationManager/
+│   └── Helpers/
+│       ├── LCDistributedNotificationManager.swift   # Helper class for distributed notifications
+│       ├── LCCFNotificationManager.swift           # Helper class for Darwin CF notifications
+│       ├── LCWorkspaceNotificationManager.swift     # Helper class for workspace-related notifications
+│       └── LCNotificationCenterManager.swift       # Helper class for NotificationCenter notifications
+
+```
+
+
 ## Installation
 ### CocoaPods
 LCNotificationManager is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:

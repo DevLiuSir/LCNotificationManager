@@ -34,6 +34,22 @@
 - **Darwin 通知**：用于 macOS 系统的低层次通知，支持发送和接收特定的系统通知。
 - **工作区通知**：便于在应用程序间共享状态，支持发送和接收工作区相关通知。
 
+## 目录结构
+
+```
+Sources/
+├── LCNotificationManager/
+│   └── Helpers/
+│       ├── LCDistributedNotificationManager.swift   # 用于分布式通知的帮助类
+│       ├── LCCFNotificationManager.swift           # Darwin CF通知的帮助类
+│       ├── LCWorkspaceNotificationManager.swift     # 处理工作空间相关通知的帮助类
+│       └── LCNotificationCenterManager.swift       # 处理 NotificationCenter 通知的帮助类
+
+```
+
+
+
+
 ## 安装
 ### CocoaPods
 LCNotificationManager 可通过 [CocoaPods](https://cocoapods.org) 获取。要安装它，只需将以下行添加到您的 Podfile 中：
