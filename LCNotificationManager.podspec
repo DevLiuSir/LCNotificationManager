@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "LCNotificationManager"
   
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   
   spec.summary      = "LCNotificationManager is a lightweight notification management framework!"
   
