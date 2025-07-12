@@ -41,10 +41,10 @@
 Sources/
 ├── LCNotificationManager/
 │   └── Helpers/
-│       ├── LCDistributedNotificationManager.swift   # Helper class for distributed notifications
-│       ├── LCCFNotificationManager.swift           # Helper class for Darwin CF notifications
-│       ├── LCWorkspaceNotificationManager.swift     # Helper class for workspace-related notifications
-│       └── LCNotificationCenterManager.swift       # Helper class for NotificationCenter notifications
+│       ├── LCDistributedCenter.swift   # Helper class for distributed notifications
+│       ├── LCCFNotificationCenter.swift           # Helper class for Darwin CF notifications
+│       ├── LCWorkspaceCenter.swift     # Helper class for workspace-related notifications
+│       └── LCNotificationCenter.swift       # Helper class for NotificationCenter notifications
 
 ```
 
