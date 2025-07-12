@@ -40,10 +40,10 @@
 Sources/
 ├── LCNotificationManager/
 │   └── Helpers/
-│       ├── LCDistributedNotificationManager.swift   # 用于分布式通知的帮助类
-│       ├── LCCFNotificationManager.swift           # Darwin CF通知的帮助类
-│       ├── LCWorkspaceNotificationManager.swift     # 处理工作空间相关通知的帮助类
-│       └── LCNotificationCenterManager.swift       # 处理 NotificationCenter 通知的帮助类
+│       ├── LCDistributedCenter.swift   # 用于分布式通知的帮助类
+│       ├── LCCFNotificationCenter.swift           # Darwin CF通知的帮助类
+│       ├── LCWorkspaceCenter.swift     # 处理工作空间相关通知的帮助类
+│       └── LCNotificationCenter.swift       # 处理 NotificationCenter 通知的帮助类
 
 ```
 
