@@ -1,5 +1,5 @@
 //
-//  LCDistributedNotificationManager.swift
+//  LCDistributedCenter.swift
 //
 //  Created by DevLiuSir on 2022/8/11.
 //
@@ -10,7 +10,7 @@ import Foundation
 
 
 // MARK: - 分布式通知管理 (Distributed Notifications)
-public class LCDistributedNotificationManager {
+public class LCDistributedCenter {
     
     // MARK: 发送通知
     
@@ -20,7 +20,7 @@ public class LCDistributedNotificationManager {
     ///   - object: 通知的对象。默认值为 `nil`。
     ///   - userInfo: 包含通知的附加信息的字典。默认值为 `nil`。
     ///   - deliverImmediately: 控制通知是否立即发送到远程观察者。默认值为 `false`，即将通知放入队列，并在稍后发送。  `true` 立即发送
-    public class func postNotification(name: NSNotification.Name, object: String? = nil, userInfo: [AnyHashable: Any]? = nil) {
+    public class func post(name: NSNotification.Name, object: String? = nil, userInfo: [AnyHashable: Any]? = nil) {
         // 获取分布式通知中心的默认实例
         let notificationCenter = DistributedNotificationCenter.default()
         

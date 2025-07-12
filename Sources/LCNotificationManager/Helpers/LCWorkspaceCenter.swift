@@ -1,5 +1,5 @@
 //
-//  LCWorkspaceNotificationManager.swift
+//  LCWorkspaceCenter.swift
 //
 //  Created by DevLiuSir on 2022/8/11.
 //
@@ -10,11 +10,11 @@ import AppKit
 
 
 // MARK: - 工作区通知管理 (Workspace Notifications)
-public class LCWorkspaceNotificationManager {
+public class LCWorkspaceCenter {
     
     /// 发送通知
-    public static func postNotification(name: NSNotification.Name, userInfo: [AnyHashable: Any]? = nil) {
-        NotificationCenter.default.post(name: name, object: nil, userInfo: userInfo)
+    public static func post(name: NSNotification.Name, userInfo: [AnyHashable: Any]? = nil) {
+        NSWorkspace.shared.notificationCenter.post(name: name, object: nil, userInfo: userInfo)
     }
     
     /// 接收通知

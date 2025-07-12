@@ -1,5 +1,5 @@
 //
-//  LCCFNotificationManager.swift
+//  LCCFNotificationCenter.swift
 //
 //  Created by DevLiuSir on 2022/8/11.
 //
@@ -31,14 +31,14 @@ import Foundation
 
 
 
-public class LCCFNotificationManager {
+public class LCCFNotificationCenter {
     
     
     //MARK: 沙盒内发送的CF通知，无法传递userinfo字典，只能发送通知名称
     
     /// 发送 `Darwin` 通知,
     /// - Parameter name: 通知的名称，用于标识要发送的通知
-    public static func postDarwinNotification(named name: String) {
+    public static func postDarwin(named name: String) {
         let notificationCenter = CFNotificationCenterGetDarwinNotifyCenter()
         let notificationName = CFNotificationName(name as CFString)
         // 设置选项，包含 立即发送 和 广播到 所有会话
@@ -51,7 +51,7 @@ public class LCCFNotificationManager {
     /// - Parameters:
     ///   - name: 通知的名称，用于指定要监听的通知
     ///   - callback: 回调函数，当通知被触发时调用
-    public static func registerDarwinNotification(named name: String, callback: @escaping CFNotificationCallback) {
+    public static func registerDarwin(named name: String, callback: @escaping CFNotificationCallback) {
         let notificationCenter = CFNotificationCenterGetDarwinNotifyCenter()
         let notificationName = name as CFString
         CFNotificationCenterAddObserver(notificationCenter, nil, callback, notificationName, nil, .deliverImmediately)
@@ -65,7 +65,7 @@ public class LCCFNotificationManager {
     /// - Parameters:
     ///   - name: 通知的名称，用于标识要发送的通知
     ///   - userInfo: 附加的字典信息，作为通知的附加数据
-    public static func postDistributedNotification(named name: String, userInfo: CFDictionary? = nil) {
+    public static func postDistributed(named name: String, userInfo: CFDictionary? = nil) {
         let notificationCenter = CFNotificationCenterGetDistributedCenter()
         let notificationName = CFNotificationName(name as CFString)
         
@@ -81,7 +81,7 @@ public class LCCFNotificationManager {
     /// - Parameters:
     ///   - name: 通知的名称，用于指定要监听的通知
     ///   - callback: 回调函数，当通知被触发时调用
-    public static func registerDistributedNotification(named name: String, callback: @escaping CFNotificationCallback) {
+    public static func registerDistributed(named name: String, callback: @escaping CFNotificationCallback) {
         let notificationCenter = CFNotificationCenterGetDistributedCenter()
         let notificationName = name as CFString
         CFNotificationCenterAddObserver(notificationCenter, nil, callback, notificationName, nil, .deliverImmediately)
@@ -89,7 +89,7 @@ public class LCCFNotificationManager {
     
     /// 移除` Darwin` 通知的监听
     /// - Parameter name: 通知的名称，用于指定要移除的监听
-    public static func removeDarwinNotification(named name: String) {
+    public static func removeDarwin(named name: String) {
         let notificationCenter = CFNotificationCenterGetDarwinNotifyCenter()
         let notificationName = CFNotificationName(name as CFString)
         CFNotificationCenterRemoveObserver(notificationCenter, nil, notificationName, nil)
@@ -97,7 +97,7 @@ public class LCCFNotificationManager {
     
     /// 移除 `Distributed` 通知的监听
     /// - Parameter name: 通知的名称，用于指定要移除的监听
-    public static func removeDistributedNotification(named name: String) {
+    public static func removeDistributed(named name: String) {
         let notificationCenter = CFNotificationCenterGetDistributedCenter()
         let notificationName = CFNotificationName(name as CFString)
         CFNotificationCenterRemoveObserver(notificationCenter, nil, notificationName, nil)
